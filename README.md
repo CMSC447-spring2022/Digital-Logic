@@ -1,2 +1,1 @@
-# Digital-Logic
-This is the project from Spring 2022 Software Engineering class at UMBC.
+https://django-tutorial-447.herokuapp.com/
