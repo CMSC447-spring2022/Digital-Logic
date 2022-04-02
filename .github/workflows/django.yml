@@ -2,9 +2,9 @@ name: Django CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ 55-as-a-developer-i-want-automated-testing ]
   pull_request:
-    branches: [ develop ]
+    branches: [ 55-as-a-developer-i-want-automated-testing ]
 
 jobs:
   build:
