@@ -1,12 +1,2 @@
-{% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<iframe src="http://localhost/Myrtille/(S(co5d21v1imay3wjm2icpjuk2))/" title="Demo" width="2000" height="1500"></iframe>
+<!-- https://github.com/cedrozor/myrtille -->
