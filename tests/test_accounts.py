@@ -1,3 +1,5 @@
+# SignUpTest from https://stackoverflow.com/questions/57337720/writing-django-signup-form-tests-for-checking-new-user-creation
+
 from django.contrib.auth import get_user_model, authenticate
 from django.test import TestCase
 
