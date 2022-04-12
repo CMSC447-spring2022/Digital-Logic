@@ -7,3 +7,4 @@ whitenoise==6.0.0
 Django~=4.0.3
 gunicorn
 django-heroku
+requests~=2.27.1
