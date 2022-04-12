@@ -22,7 +22,7 @@
         <input type="submit">
     </form>
             {% for launch in launches %}
-                <p>Click <a href="" target="popup" onclick="window.open('https://3.85.44.32/{{launch.launch_url }}','popup','width=600,height=600'); return false;">here</a> to launch</p>
+                <p>Click <a href="" target="popup" onclick="window.open('https://3.85.44.32{{launch.launch_url }}','popup','width=600,height=600'); return false;">here</a> to launch</p>
             {% endfor %}
             {% for error in errors %}
                 <p>{{ error.text }}</p>
