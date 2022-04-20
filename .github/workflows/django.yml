@@ -2,7 +2,7 @@ name: Django CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ 83-as-a-developer-i-want-to-fix-the-database-error-in-github-actions ]
   pull_request:
     branches: [ develop ]
 
