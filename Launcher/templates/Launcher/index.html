@@ -1,0 +1,31 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'Launcher/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title of the document</title>
+</head>
+<body>
+
+<h1>Welcome</h1>
+
+    <form action="{% url 'destroy' %}" method="post">
+        {% csrf_token %}
+        Destroy Workspace:
+        <input type="submit">
+    </form>
+    <form action="{% url 'add' %}" method="post">
+        {% csrf_token %}
+        Get Workspace:
+        <input type="submit">
+    </form>
+            {% for launch in launches %}
+                <p>Click <a href="" target="popup" onclick="window.open('https://3.85.44.32{{launch.launch_url }}','popup','width=600,height=600'); return false;">here</a> to launch</p>
+            {% endfor %}
+            {% for error in errors %}
+                <p>{{ error.text }}</p>
+            {% endfor %}
+</body>
+</html>
