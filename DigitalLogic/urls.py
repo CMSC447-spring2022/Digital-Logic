@@ -3,7 +3,8 @@ from django.urls import include, path
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    path('', include('Launcher.urls')),
+    path('', include('LoginPage.urls')),
+    path('Launch/', include('Launcher.urls')),
     path('admin/', admin.site.urls),
     path("accounts/", include("accounts.urls")),
     path('accounts/', include('django.contrib.auth.urls')),

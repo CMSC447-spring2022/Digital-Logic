@@ -8,5 +8,5 @@ class LoginContext(models.Model):
     instance_id = models.TextField(blank=True)
 
 
-class ErrorContext(models.Model):
-    text = models.TextField()
+# class ErrorContext(models.Model):
+#     text = models.TextField()
