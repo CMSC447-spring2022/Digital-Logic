@@ -34,18 +34,16 @@ def initconn(debug):
 
 class Email:
     def __init__(self, debug=False):
-        self.debug = debug
         self.conn, self.username = initconn(debug)
+        self.debug = True if self.conn == '' else False
 
     def send_mail(self, to_email, message_subject, message_body):
-        message = f"""\
-        Subject: {message_subject}
-        
-        {message_body}"""
-        self.conn.sendmail(to_email, self.username, message)
-
-
-if __name__ == '__main__':
-
-    e = Email()
-    print(e)
+        if self.debug:
+            return 0
+        message = f"""Subject: {message_subject}\n\n{message_body}"""
+        try:
+            self.conn.sendmail(self.username, to_email, message)
+            return 1
+        except smtplib.SMTPException:
+            logging.warning('sending email failed')
+            return -1
