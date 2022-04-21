@@ -130,3 +130,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+import json
+
+secret_path = os.path.dirname(__file__) + '/../../secret'
+with open(secret_path, 'rb') as configfile:
+    config = json.load(configfile)
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config['email']['username']
+EMAIL_HOST_PASSWORD = config['email']['password']
