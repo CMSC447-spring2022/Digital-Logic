@@ -2,7 +2,7 @@ name: Django CI
 
 on:
   push:
-    branches: [ 87-fix-testing-error-made-by-github-for-email-integration ]
+    branches: [ develop ]
   pull_request:
     branches: [ develop ]
 
