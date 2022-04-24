@@ -18,3 +18,10 @@ class UserCreateForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+
+# from https://www.reddit.com/r/webdev/comments/cjfmg8/django_deleting_user_accounts/
+class UserDeleteForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = []
