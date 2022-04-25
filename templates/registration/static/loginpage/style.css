@@ -1,0 +1,27 @@
+li a {
+    color: green;
+}
+
+body {
+    background: white url("images/teamname.gif") no-repeat;
+    height: 50%;
+    width: 50%
+    margin: 0px;
+}
+
+.background-container{
+    background: yellow  url("images/Digital_Logic_Login_background.gif") no-repeat;;
+    height: 100%;
+    width: 100%;
+    box-sizing: boarder-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.login{
+    width: 20%;
+    height: 20%;
+    border: 5px solid black;
+    box-sizing: boarder-box;
+}

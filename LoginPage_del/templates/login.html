@@ -1,0 +1,49 @@
+{% block title %}LoginForm{% endblock %}
+<head><style>
+<!-- <title>Text alignment</title> -->
+        body{text-align: center;}
+        h1{text-align: center;}
+        h2{text-align: center;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        style= "font-family: 'Verdana'"
+        }
+        h3{text-align: center;}
+        p{text-align: center;}
+    </style></head>
+{% block main %}
+<body>
+    <h1>Log In Correct</h1>
+    <link rel="stylesheet" type="text/css" href="{% static 'login_page/style.css' %}">
+        <div id="login">
+            <form class="form-horizontal" name="LoginForm" action="/login/" method="post">
+                {% csrf_token %}
+                {% if next %}
+                <h2><input type="hidden" name="next" value="{{ next }}" /></h2>
+                {% endif %}
+                <div class="login-group">
+                    <h2><label class="login-label" for="username">Username</label></h2>
+                    <div class="controls">
+                        <h2><input type="text" id="username" name="username"  placeholder="Username"></h2>
+                    </div>
+                </div>
+                <div class="login-group">
+                    <h2><label class="login-label" for="password">Password</label></h2>
+                    <div class="controls">
+                        <h2><input type="password" name="password" id="password" placeholder="Password"></h2>
+                    </div>
+                </div>
+                <div class="login-group">
+                    <div class="buttons">
+                        <h2><button type="submit" class="btn">Login</button>
+                            <button type="text" class="btn">Create Account</button></h2>
+                    </div>
+                </div>
+                <div class="login-group">
+                    <p>Click <a href="" target="popup" onclick="window.open('https://3.85.44.32{{launch.launch_url }}','popup','width=600,height=600'); return false;">here</a> to launch</p>
+                </div>
+            </form>
+        </div>
+</body>
+{% endblock %}

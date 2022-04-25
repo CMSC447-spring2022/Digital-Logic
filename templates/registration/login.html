@@ -1,15 +1,66 @@
-<!-- https://learndjango.com/tutorials/django-login-and-logout-tutorial -->
+{% load static %}
 
-{% extends 'base.html' %}
+<link rel="stylesheet" type="text/css" href="{% static "loginpage/style.css" %}">
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Login{% endblock %}
+<!-- <title>Text alignment</title> -->
+<head>
+    <meta charset="utf-8">
+    <style>
+        body{text-align: center;
+        color: green;
+        border:5px solid black;}
+        h1{text-align: center;}
+        h2{text-align: center;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        style= "font-family: 'Verdana'"
+        }
+        h3{text-align: center;}
+        p{text-align: center;}
+        img{align-items: center;}
+    </style></head>
+<div class="background-container"></div>
 
-{% block content %}
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-  <p><a href="{% url 'password_reset' %}">Forgot My Password</a></p>
-</form>
+
+{% block main %}
+<body>
+<!--<img src="static/loginpage/images/teamname.gif" alt="digital logic team name" width="700" height="150" style="border:5px solid black; vertical-align:middle" >-->
+<div class="background-container"></div>
+<h1>Log In</h1>
+
+<div id="login">
+<!--    <form name="LoginForm" method="post">-->
+    {% csrf_token %}
+    <div class="login-group">
+      <h2><label class="login-label" for="username">Username</label></h2>
+      <div class="controls">
+          {% csrf_token %}
+          <h2><input type="text" id="username" name="username"  placeholder="Username"></h2>
+      </div>
+    </div>
+    <div class="login-group">
+        <h2><label class="login-label" for="password">Password</label></h2>
+        <div class="controls">
+            {% csrf_token %}
+            <h2><input type="password" name="password" id="password" placeholder="Password"></h2>
+        </div>
+    </div>
+    <div class="login-group">
+      <div class="buttons">
+        <h2><a href="{% url 'index' %}"><button type="submit" class="btn">Login</button></a>
+            <a href="{% url 'signup' %}"><button type="button" class="btn">Create Account</button></a></h2>
+      </div>
+    </div>
+    <div class="login-group">
+      <p><a href="{% url 'password_reset' %}">Forgot My Password</a></p>
+    </div>
+  </form>
+</div>
+</body>
 {% endblock %}
+
+
+

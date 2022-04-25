@@ -33,9 +33,9 @@ def login_user(request):
     return HttpResponseRedirect(reverse('login_user'))
 
 
-# @login_required(login_url='/login/')
+@login_required(login_url='/login/')
 
-def login(request):
+def login(request, user):
     return
 
 
