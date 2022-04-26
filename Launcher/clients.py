@@ -39,3 +39,19 @@ class LauncherClient:
         response = requests.request("POST", url, headers=headers, data=payload, verify=False)
 
         return response
+
+
+    @staticmethod
+    def get_all_containers():
+        url = "https://3.85.44.32/api/public/get_kasms"
+
+        payload = json.dumps({
+            "api_key": "q7I5MJFnoX16",
+            "api_key_secret": "hMN3qhkcibkk1wc9US7R1QalcaPZEHiD"
+        })
+        headers = {
+            'Content-Type': 'application/json'
+        }
+        response = requests.request("POST", url, headers=headers, data=payload, verify=False)
+
+        return response
