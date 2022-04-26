@@ -1,10 +1,10 @@
 # from https://learndjango.com/tutorials/django-signup-tutorial
-
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from accounts.forms import UserCreateForm
 from django.urls import reverse_lazy
-from django.views import generic
+from django.views import generic, View
 from .forms import UserDeleteForm
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
@@ -17,19 +17,20 @@ class SignUpView(generic.CreateView):
 
 
 # from https://www.reddit.com/r/webdev/comments/cjfmg8/django_deleting_user_accounts/
-@login_required
-def deleteuser(request):
-    if request.method == 'POST':
-        delete_form = UserDeleteForm(request.POST, instance=request.user)
-        user = request.user
-        user.delete()
-        messages.info(request, 'Your account has been deleted.')
-        return redirect('home')
-    else:
-        delete_form = UserDeleteForm(instance=request.user)
+@method_decorator(login_required, name='dispatch')
+class DeleteUserView(View):
+    form_class = UserDeleteForm
+    template_name = 'delete_account.html'
 
-    context = {
-        'delete_form': delete_form
-    }
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(instance=request.user)
+        return render(request, self.template_name, {'form': form})
 
-    return render(request, 'accounts/delete_account.html', context)
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST, instance=request.user)
+        if form.is_valid():
+            user = request.user
+            user.delete()
+            messages.info(request, 'Your account has been deleted.')
+            return redirect('home')
+        return render(request, self.template_name, {'form': form})
