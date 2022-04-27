@@ -9,7 +9,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 
-
 class SignUpView(generic.CreateView):
     form_class = UserCreateForm
     success_url = reverse_lazy("login")

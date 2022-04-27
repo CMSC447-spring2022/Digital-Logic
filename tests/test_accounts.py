@@ -1,7 +1,12 @@
 # SignUpTest from https://stackoverflow.com/questions/57337720/writing-django-signup-form-tests-for-checking-new-user-creation
 
 from django.contrib.auth import get_user_model, authenticate
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
+from django.urls import reverse
+from django.test.client import Client
+
+
+from accounts.views import DeleteUserView
 
 
 class SignUpViewTest(TestCase):
@@ -40,10 +45,16 @@ class SignUpTest(TestCase):
 
 
 class DeleteUserTest(TestCase):
-    def test_delete_get(self):
-        user = get_user_model().objects.create_user(username='test', password='123abc456', email='test@example.com')
-        user.save()
-        response = self.client.post('/accounts/delete_account/')
-        self.assertIs()
+    def setUp(self):
+        self.client = Client()
+        self.user = get_user_model().objects.create_user(username='test', password='123abc456', email='test@example.com')
 
+    def tearDown(self):
+        self.user.delete()
 
+    def test_delete_post(self):
+        self.client.login(username='test', password='123acb456')
+        response = self.client.post(reverse('delete_account'))
+        self.assertEqual(response["Location"], reverse('home'))
+        user = authenticate(username='test', password='123abc456')
+        self.assertTrue(user is None)
