@@ -20,10 +20,12 @@ def test_login(self):
         elem = page.find_element_by_id('Password')
         elem.send_keys('password') #inputs password as input
         elem.submit() #submits login info
-        
-        self.assertIsNotNone(elem)
 
-#tests create account
+        #working progress
+        self.assertIsNotNone(elem, 1 == 1, "Login test done")
+
+#tests create account (working progress)
 def test_create_account(self):
     with self.browser("index") as page:
         elem = page.find_element_by_id("Create Account").click()
+        self.assertIsNotNone(elem, 1 == 1, "Login test done")
