@@ -1,4 +1,6 @@
 # from https://learndjango.com/tutorials/django-signup-tutorial
+import time
+
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from accounts.forms import UserCreateForm
@@ -30,6 +32,5 @@ class DeleteUserView(View):
         if form.is_valid():
             user = request.user
             user.delete()
-            messages.info(request, 'Your account has been deleted.')
             return redirect('home')
         return render(request, self.template_name, {'form': form})
