@@ -4,7 +4,6 @@ from django.views.generic.base import TemplateView
 # from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('Launch/', include('Launcher.urls')),
     path('admin/', admin.site.urls),
     path("accounts/", include("accounts.urls")),
     path('accounts/', include('django.contrib.auth.urls')),
