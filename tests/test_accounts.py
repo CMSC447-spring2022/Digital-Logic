@@ -2,12 +2,20 @@
 
 from django.contrib.auth import get_user_model, authenticate
 from django.test import TestCase
+from django.urls import reverse
+from django.test.client import Client
 
 
 class SignUpViewTest(TestCase):
     def test_signup_page(self):
         response = self.client.get('/accounts/signup/')
         self.assertEqual(response.status_code, 200)
+
+
+class DeleteUserViewTest(TestCase):
+    def test_delete_user_page(self):
+        response = self.client.get('/accounts/delete_account/')
+        self.assertEqual(response.status_code, 302)
 
 
 class SignUpTest(TestCase):
@@ -31,3 +39,17 @@ class SignUpTest(TestCase):
 
         users = get_user_model().objects.all()
         self.assertEqual(users.count(), 1)
+
+
+class DeleteUserTest(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.user = get_user_model().objects.create_user(username='test', password='123abc456', email='test@example.com')
+
+    def tearDown(self):
+        self.user.delete()
+
+    def test_delete_post(self):
+        self.client.login(username='test', password='123acb456')
+        response = self.client.post(reverse('delete_account'))
+        self.assertEqual(response["Location"], '/accounts/login/?next=/accounts/delete_account/')

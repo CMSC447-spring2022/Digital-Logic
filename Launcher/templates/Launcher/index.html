@@ -1,3 +1,10 @@
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="/">Return home</a></p>
+
+
+
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'Launcher/style.css' %}">
@@ -5,39 +12,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head><style>
-        body{text-align: center;}
-        h1{text-align: center;}
-        h2{text-align: center;
-        display: block;
-        justify-content: center;
-        align-items: center;
-        style= "font-family: 'Verdana'"
-        }
-        h3{text-align: center;}
-        p{text-align: center;}
-    </style></head>
+    <title>Title of the document</title>
 </head>
 <body>
 
 <h1>Welcome</h1>
-
-    <form action="{% url 'destroy' %}" method="post">
+    <form action="{% url 'destroy_all' %}" method="post">
         {% csrf_token %}
-        Destroy Workspace:
-        <input type="submit">
+        Destroy All Workspaces:
+        <input type="submit" id="destroyworkspace">
     </form>
     <form action="{% url 'add' %}" method="post">
         {% csrf_token %}
         Get Workspace:
-        <input type="submit">
+        <input type="submit" id="getworkspace">
     </form>
-    {% for launch in launches %}
-        <p>Click <a href="" target="popup" onclick="window.open('https://3.85.44.32{{launch.launch_url }}','popup','width=600,height=600'); return false;">here</a> to launch</p>
-    {% endfor %}
-    {% for error in errors %}
-        <p>{{ error.text }}</p>
-    {% endfor %}
-
+            {% for launch in launches %}
+                {% if launch.user == user.username %}
+                    <p>{{ launch.user }}: Click <a href="" target="popup" onclick="window.open('https://3.85.44.32{{launch.launch_url }}','popup','width=600,height=600'); return false;">here</a> to launch</p>
+                {% endif %}
+            {% endfor %}
+            {% for error in errors %}
+                <p>{{ error.text }}</p>
+            {% endfor %}
 </body>
 </html>
+
+{% else %}
+  <p>Error, you are not logged in</p>
+
+{% endif %}
+{% endblock %}

@@ -6,6 +6,7 @@ from django.db import models
 class LaunchContext(models.Model):
     launch_url = models.TextField()
     instance_id = models.TextField(blank=True)
+    user = models.TextField(blank=True)
 
 
 class ErrorContext(models.Model):
