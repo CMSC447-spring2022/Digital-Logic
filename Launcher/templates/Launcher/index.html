@@ -20,12 +20,12 @@
     <form action="{% url 'destroy_all' %}" method="post">
         {% csrf_token %}
         Destroy All Workspaces:
-        <input type="submit">
+        <input type="submit" id="destroyworkspace">
     </form>
     <form action="{% url 'add' %}" method="post">
         {% csrf_token %}
         Get Workspace:
-        <input type="submit">
+        <input type="submit" id="getworkspace">
     </form>
             {% for launch in launches %}
                 {% if launch.user == user.username %}
