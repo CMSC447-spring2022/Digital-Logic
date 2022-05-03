@@ -1,5 +1,6 @@
 .idea/
 __pycache__/
+DigitalLogic/__pycache__/
 db.sqlite3
 /DigitalLogic/.env
 /Launcher/migrations/0002_errorcontext_launchcontext_delete_choice_and_more.py
