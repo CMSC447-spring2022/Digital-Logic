@@ -35,7 +35,6 @@ def add(request):
     return HttpResponseRedirect(reverse('index'))
 
 
-
 def destroy(request):
     try:
         container_id = LaunchContext.objects.get().instance_id
