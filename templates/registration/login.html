@@ -38,11 +38,11 @@
 <h1>Log In</h1>
 
 <div id="login">
-<!--    <form name="LoginForm" method="post">-->
+    <form name="LoginForm" method="post">
     {% csrf_token %}
-<!--    {% if next %}-->
-<!--    <input type="hidden" name="next" value="{{ next }}" />-->
-<!--    {% endif %}-->
+    {% if next %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    {% endif %}
     <div class="login-group">
       <h2><label class="login-label" for="username">Username:</label>
       <div class="controls">
