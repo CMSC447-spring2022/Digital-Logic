@@ -2,13 +2,16 @@
 
 {% extends "base.html" %}
 
-{% block title %}Sign Up{% endblock %}
-
 {% block content %}
   <h2>Sign up</h2>
+<div class="override-top-bar">
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" id="signup">Sign Up</button>
   </form>
+</div>
+<div class="top-bar">
+  <p><a href="{% url 'home' %}">Back to home</a></p>
+</div>
 {% endblock %}

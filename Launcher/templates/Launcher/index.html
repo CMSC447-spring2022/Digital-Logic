@@ -1,16 +1,14 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
-
 {% block content %}
 {% if user.is_authenticated %}
-    Hi {{ user.username }}!
+    <h2>Welcome, {{ user.username }}</h2>
+<div class="top-bar">
     <p><a href="{% url 'logout' %}">Log Out</a></p>
-    <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
-    <p><a href="{% url 'delete_account' %}">Delete Account</a></p>
-
-    <h1>Welcome</h1>
-
+    <p><a href="{% url 'account_settings' %}">Account</a></p>
+</div>
+<br>
+<div>
     <form action="{% url 'destroy_all' %}" method="post">
         {% csrf_token %}
         Destroy All Workspaces:
@@ -21,7 +19,7 @@
         Get Workspace:
         <input type="submit" id="getworkspace">
     </form>
-
+</div>
     {% for launch in launches %}
         {% if launch.user == user.username %}
             <p>{{ launch.user }}: Click <a href="" target="popup" onclick="window.open('https://3.85.44.32{{launch.launch_url }}','popup','width=600,height=600'); return false;">here</a> to launch</p>
@@ -33,9 +31,11 @@
     {% endfor %}
 
 {% else %}
-  <p>You are not logged in</p>
+<h2>You are not logged in</h2>
+<br>
+<div class="top-bar">
   <a href="{% url 'login' %}">Log In</a>
-  <br><br>
   <a href="{% url 'signup' %}">Sign Up</a>
+</div>
 {% endif %}
 {% endblock %}

@@ -9,4 +9,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('', TemplateView.as_view(template_name='Launcher/index.html'), name='home'),
     path('launcher', include("Launcher.urls"), name='index'),
+    path('account_settings', TemplateView.as_view(template_name='account_settings.html'), name='account_settings')
 ]
