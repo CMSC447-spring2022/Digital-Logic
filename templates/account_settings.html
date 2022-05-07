@@ -4,8 +4,9 @@
 {% if user.is_authenticated %}
 <h2>Account Settings</h2>
 <div class="top-bar">
-<p><a href="{% url 'password_reset' %}">Reset Password</a></p>
-<p><a href="{% url 'delete_account' %}">Delete Account</a></p>
+  <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+  <p><a href="{% url 'delete_account' %}">Delete Account</a></p>
+  <p><a href="{% url 'home' %}">Back to home</a></p>
 </div>
 {% else %}
 <h2>You are not logged in</h2>
