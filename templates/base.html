@@ -9,12 +9,12 @@
   <!--    style-->
   <style>
         body{
-        background: darkgreen url("images/Digital_Logic_Login_background.gif");
+        background: darkgreen;
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-attachment: fixed;
         text-align: center;
-        color: darkblue;
+        color: black;
         border:5px solid black;
         margin: 10% 25% 10% 25%;
         }
@@ -22,10 +22,21 @@
         display: block;
         justify-content: center;
         align-items: center;
-        style= "font-family: 'Verdana'"
+        font-family: 'Verdana'
         }
+        h2{text-align: center;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Verdana'
+        }
+        li{text-align: left !important; }
         p{text-align: center;}
-}
+        a{color: lightblue;}
+        .login_page{
+          background: darkgreen url("templates/registration/images/teamname.gif");
+<!--          img: src="templates/registration/teamname.gif" alt="login page background";-->
+        }
     </style>
   <meta charset="utf-8">
   <title>{% block title %}Digital Logic{% endblock %}</title>

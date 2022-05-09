@@ -2,44 +2,42 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'loginpage/style.css' %}">
 
-
 {% block content %}
-<body>
-<div class="background-container"></div>
+<!--<img src="templates/registration/teamname.gif" alt="login page header" width="50" height="60">-->
+
+<body class="login_page" >
 <h1>Log In</h1>
 
 <div id="login">
     <form name="LoginForm" method="post">
-    {% csrf_token %}
-    {% if next %}
-    <input type="hidden" name="next" value="{{ next }}" />
-    {% endif %}
-    <div class="login-group">
-      <h2><label class="login-label" for="username">Username:</label>
-      <div class="controls">
-          {% csrf_token %}
-          <input type="text" id="username" name="username"  placeholder="Username"></h2>
-      </div>
-    </div>
-    <div class="login-group">
-        <h2><label class="login-label" for="password">Password</label>
-        <div class="controls">
-            {% csrf_token %}
-            <input type="password" name="password" id="password" placeholder="Password"></h2>
+        {% csrf_token %}
+        {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        <div class="login-group">
+            <h2><label class="login-label" for="username">Username:</label>
+            <div class="controls">
+                {% csrf_token %}
+                <input type="text" id="username" name="username"  placeholder="Username"></h2>
+            </div>
         </div>
-    </div>
-    <div class="login-group">
-      <div class="buttons">
-        <h2><a href="{% url 'index' %}"><button type="submit" class="btn">Login</button></a>
-            <a href="{% url 'signup' %}"><button type="button" class="btn">Create Account</button></a></h2>
-      </div>
-    </div>
-    <div class="login-group">
-      <p><a href="{% url 'password_reset' %}">Forgot My Password</a></p>
-    </div>
-  </form>
-</div>
-</body></html>
+        <div class="login-group">
+            <h2><label class="login-label" for="password">Password</label>
+                <div class="controls">
+                    {% csrf_token %}
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div></h2>
+        </div>
+        <div class="login-group">
+            <div class="buttons">
+            <h3><a href="{% url 'index' %}"><button type="submit" class="btn">Login</button></a>
+                <a href="{% url 'signup' %}"><button type="button" class="btn">Create Account</button></a></h3>
+            </div>
+        </div>
+        <div class="login-group">
+            <p><a href="{% url 'password_reset' %}">Forgot My Password</a></p>
+        </div>
+</body>
 {% endblock %}
 
 
