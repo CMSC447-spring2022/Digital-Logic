@@ -10,5 +10,3 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='Launcher/index.html'), name='home'),
     path('launcher', include("Launcher.urls"), name='index'),
 ]
-
-# urlpatterns += staticfiles_urlpatterns()
