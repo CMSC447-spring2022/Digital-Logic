@@ -2,7 +2,7 @@
 
 from django.urls import path
 
-from .views import SignUpView, DeleteUserView
+from DigitalLogic.views import SignUpView, DeleteUserView
 
 urlpatterns = [
     path("signup/", SignUpView.as_view(), name="signup"),

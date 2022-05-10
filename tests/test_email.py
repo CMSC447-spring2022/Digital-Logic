@@ -1,6 +1,4 @@
-import os
-
-from accounts.email_connection import Email
+from DigitalLogic.email_connection import Email
 from django.test import TestCase
 
 
