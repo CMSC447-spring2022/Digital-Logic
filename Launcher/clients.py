@@ -10,7 +10,7 @@ class LauncherClient:
             "api_key": "q7I5MJFnoX16",
             "api_key_secret": "hMN3qhkcibkk1wc9US7R1QalcaPZEHiD",
             "user_id": "e60a9c80-289a-4b3a-aedb-42f1d5fe8060",
-            "image_id": "51187e08ea6f4aaa982c9a8c0ed947ee",
+            "image_id": "ce3ba69ca3734a38805c3cde2f71ac11",
             "enable_sharing": "true",
             "environment": {
                 "ENV_VAR": ""
