@@ -1,5 +1,8 @@
 <!-- https://learndjango.com/tutorials/django-login-and-logout-tutorial -->
 
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +10,10 @@
   <title>{% block title %}Digital Logic{% endblock %}</title>
 </head>
 <body>
+<br>
+  <h1 class="logo">Digital Logic Simulator</h1>
   <main>
+    <br>
     {% block content %}
     {% endblock %}
   </main>
