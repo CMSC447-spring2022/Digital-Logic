@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'loginpage/style.css' %}">
 
 {% block content %}
-<!--<img src="templates/registration/teamname.gif" alt="login page header" width="50" height="60">-->
 
-<body class="login_page" background="darkgreen url('images/teamname.gif') !important">
+<body class="login_page" >
+<br>
 <h1>Log In</h1>
 
 <div id="login">
@@ -30,8 +29,8 @@
         </div>
         <div class="login-group">
             <div class="buttons">
-            <h3><a href="{% url 'index' %}"><button type="submit" class="btn">Login</button></a>
-                <a href="{% url 'signup' %}"><button type="button" class="btn">Create Account</button></a></h3>
+            <h3><a class="button1" href="{% url 'index' %}"><button type="submit" class="btn">Login</button></a>
+                <a class="button1" href="{% url 'signup' %}"><button type="button" class="btn">Create Account</button></a></h3>
             </div>
         </div>
         <div class="login-group">

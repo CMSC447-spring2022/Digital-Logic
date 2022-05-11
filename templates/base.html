@@ -15,7 +15,7 @@
         background-attachment: fixed;
         text-align: center;
         color: black;
-        border:5px solid black;
+        border:5px solid yellow;
         margin: 10% 25% 10% 25%;
         }
         h1{text-align: center;
@@ -34,10 +34,19 @@
         p{text-align: center;}
         a{color: lightblue;}
         .login_page{
-          background: darkgreen url("templates/registration/images/teamname.gif");
-<!--          img: src="templates/registration/teamname.gif" alt="login page background";-->
+            background: url(https://github.com/CMSC447-spring2022/Digital-Logic/blob/login_page_matt/templates/registration/images/login_background_2.gif?raw=true) no-repeat fixed;
+            background-size: 100% 100%;
+            margin: 10.2% 26% 11% 26%;
+            border-style: hidden;
+        }
+        .button1{
+          border: 3px inset white;
+          outline-offset: 15px;
+          background-color: white;
         }
     </style>
+
+
   <meta charset="utf-8">
   <title>{% block title %}Digital Logic{% endblock %}</title>
 </head>
