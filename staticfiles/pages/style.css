@@ -67,4 +67,11 @@ a{color: darkblue;}
     margin: 10.2% 26% 11% 26%;
     border-style: hidden;
 }
+.pwd_reset_comp{
+    background: url(https://github.com/CMSC447-spring2022/Digital-Logic/blob/login_page_raj/HTML_Background/password_been_reset.png?raw=true) no-repeat fixed;
+    background-size: 100% 100%;
+    margin: 10.2% 26% 11% 26%;
+    border-style: hidden;
+    color: white;
+}
 
