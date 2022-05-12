@@ -5,18 +5,20 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<body>
-  {% if user.is_authenticated %}
-    Hi {{ user.username }}!
-    <p><a href="/launcher" id="launcher">Launcher</a></p>
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
-    <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
-    <p><a href="{% url 'delete_account' %}">Delete Account</a></p>
-  {% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Log In</a>
-    <br><br>
-    <a href="{% url 'signup' %}">Sign Up</a>
-  {% endif %}
+<body class="home_page" >
+  <div id="access_control">
+    {% if user.is_authenticated %}
+      Hi {{ user.username }}!
+      <p><a href="/launcher" id="launcher">Launcher</a></p>
+      <p><a href="{% url 'logout' %}">Log Out</a></p>
+      <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+      <p><a href="{% url 'delete_account' %}">Delete Account</a></p>
+    {% else %}
+      <p>You are not logged in</p>
+      <a href="{% url 'login' %}">Log In</a>
+      <br><br>
+      <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %}
+  </div>
 </body>
 {% endblock %}
