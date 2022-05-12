@@ -1,14 +1,12 @@
 # from https://learndjango.com/tutorials/django-signup-tutorial
-import time
 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from accounts.forms import UserCreateForm
+from DigitalLogic.forms import UserCreateForm
 from django.urls import reverse_lazy
 from django.views import generic, View
 from .forms import UserDeleteForm
 from django.shortcuts import render, redirect
-from django.contrib import messages
 
 
 class SignUpView(generic.CreateView):
