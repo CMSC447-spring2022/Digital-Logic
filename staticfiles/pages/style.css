@@ -80,3 +80,14 @@ a{color: darkblue;}
     margin: 10.2% 26% 11% 26%;
     border-style: hidden;
 }
+.del_acc{
+    background: url(https://github.com/CMSC447-spring2022/Digital-Logic/blob/login_page_raj/HTML_Background/background_447_delete_account.png?raw=true) no-repeat fixed;
+    background-size: 100% 100%;
+    margin: 10.2% 26% 11% 26%;
+    color: white;
+    boarder-style:hidden;
+}
+.btn-danger{
+    background-color: red;
+    color: white;
+}
