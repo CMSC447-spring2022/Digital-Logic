@@ -1,7 +1,7 @@
 <!--    bootstrap link-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-  <!--    style-->
+<!--    style-->
 
 body{
 background: darkgreen;
@@ -10,7 +10,7 @@ background-size: 100% 100%;
 background-attachment: fixed;
 text-align: center;
 color: black;
-border:5px solid yellow;
+border:5px solid black;
 margin: 10% 25% 10% 25%;
 }
 h1{text-align: center;
@@ -27,17 +27,12 @@ font-family: 'Verdana';
 }
 li{text-align: left !important; }
 p{text-align: center;}
-a{color: lightblue;}
-.home_page{
-    background: url(https://github.com/CMSC447-spring2022/Digital-Logic/blob/login_page_raj/HTML_Background/Digital%20Logic%20Login%20background.png?raw=true) no-repeat fixed;
-    background-size: 100% 100%;
-    margin: 10.2% 26% 11% 26%;
-    border-style: hidden;
-}
+a{color: darkblue;}
 .button1{
   border: 3px inset white;
   outline-offset: 15px;
   background-color: white;
+  color: darkblue;
 }
 .login_page{
     background: url(https://github.com/CMSC447-spring2022/Digital-Logic/blob/login_page_raj/HTML_Background/login_backgroudn_2.png?raw=true) no-repeat fixed;
@@ -51,5 +46,10 @@ a{color: lightblue;}
     margin: 10.2% 26% 11% 26%;
     border-style: hidden;
 }
-
+.signup_page{
+    background: url(https://github.com/CMSC447-spring2022/Digital-Logic/blob/login_page_raj/HTML_Background/sign_up.png?raw=true) no-repeat fixed;
+    background-size: 100% 100%;
+    margin: 10.2% 26% 11% 26%;
+    border-style: hidden;
+}
 

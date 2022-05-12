@@ -37,10 +37,12 @@
 </html>
 
 {% else %}
+<body class="home_page">
     <br><br><br>
   <p>You are not logged in</p>
   <a class="button1" href="{% url 'login' %}">Log In</a>
   <br><br>
   <a class="button1" href="{% url 'signup' %}">Sign Up</a>
+</body>
 {% endif %}
 {% endblock %}
