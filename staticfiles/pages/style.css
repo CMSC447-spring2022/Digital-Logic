@@ -74,4 +74,9 @@ a{color: darkblue;}
     border-style: hidden;
     color: white;
 }
-
+.pwd_reset_conf{
+    background: url(https://github.com/CMSC447-spring2022/Digital-Logic/blob/login_page_raj/HTML_Background/password_recovery.png?raw=true) no-repeat fixed;
+    background-size: 100% 100%;
+    margin: 10.2% 26% 11% 26%;
+    border-style: hidden;
+}
